@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/flatly/bootstrap.min.css"
+      integrity="sha512-q+Sm01IL0q3keoeZkh7cHh6CcUGU0LVwFIf9Il4utcw0oC2MH9mpATEyvuh6dbzDiV8Pw4CXlsT7O1zXFc0LwQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <title>GC URL Builder</title>
+  </head>
+  <body>
+    <div class="container bg-light vh-100">
+      <h1 class="text-center text-primary p-4">UTM URL Builder</h1>
+
+      <form>
+        <div class="mb-3">
+          <label class="form-label fw-bold" for="url">Url:</label>
+          <div class="d-flex">
+            <input
+              class="form-control"
+              type="text"
+              name="url"
+              id="url"
+              style="flex-basis: 95%"
+            />
+            <div id="home-icon-div"></div>
+            <button
+              type="button"
+              class="btn btn-primary p-2 ms-2"
+              style="height: 42px; width: 42px"
+              id="home-icon"
+            >
+              <img src="globe.svg" alt="" />
+            </button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col">
+            <label
+              for="source"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-original-title="Tooltip on right"
+              class="form-label fw-bold"
+              >Source:</label
+            >
+            <input
+              type="text"
+              list="sources_list"
+              id="source"
+              class="required form-control"
+              placeholder=""
+            />
+            <datalist id="sources_list">
+              <option value="google"></option>
+              <option value="facebook"></option>
+              <option value="linkedin"></option>
+              <option value="twitter"></option>
+              <option value="instagram"></option>
+              <option value="youtube"></option>
+              <option value="tiktok"></option>
+              <option value="referral"></option>
+              <option value="txt"></option>
+              <option value="outreach"></option>
+            </datalist>
+          </div>
+
+          <div class="mb-3 col">
+            <label for="medium" class="form-label fw-bold">Medium:</label>
+            <input
+              type="text"
+              list="medium_list"
+              id="medium"
+              class="required form-control"
+              placeholder=""
+            />
+            <datalist id="medium_list">
+              <option value="paid"></option>
+              <option value="organic"></option>
+              <option value="social"></option>
+              <option value="sms"></option>
+              <option value="email"></option>
+              <option value="affiliates"></option>
+            </datalist>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col">
+            <label class="form-label fw-bold" for="campaign">Campaign:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="campaign"
+              id="campaign"
+            />
+          </div>
+
+          <div class="mb-3 col">
+            <label class="form-label fw-bold" for="id">ID:</label>
+            <input type="text" class="form-control" name="id" id="id" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col">
+            <label class="form-label fw-bold" for="content">Content:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="content"
+              id="content"
+            />
+          </div>
+
+          <div class="mb-3 col">
+            <label class="form-label fw-bold" for="term">Term:</label>
+            <input type="text" class="form-control" name="term" id="term" />
+          </div>
+        </div>
+      </form>
+
+      <div class="d-flex justify-content-center mt-2">
+        <button
+          type="button"
+          class="btn btn-outline-primary fw-bold"
+          id="clear-url-btn"
+        >
+          Clear URL
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-primary fw-bold ms-2"
+          id="clear-details-btn"
+        >
+          Clear Tracking
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-outline-primary ms-2"
+          style="height: 42px; width: 42px"
+        >
+          <i class="fa-solid fa-gear"></i>
+        </button>
+      </div>
+
+      <br />
+      <br />
+
+      <label class="form-label fw-bold" for="final-url">Final URL:</label>
+      <form class="d-flex">
+        <input
+          type="text"
+          name="final-url"
+          id="final-url"
+          class="form-control"
+        />
+        <button class="btn btn-primary ms-2 fw-bold" id="final-btn">
+          Copy
+        </button>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
