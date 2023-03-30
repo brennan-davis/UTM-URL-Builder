@@ -1,3 +1,5 @@
+window.onload = renderBackgroundImage();
+
 const urlInput = GetById("url");
 const id = GetById("id");
 const campaign = GetById("campaign");
@@ -163,4 +165,13 @@ https: function replaceSpaces(s) {
 
 function GetById(name) {
 	return document.getElementById(name);
+}
+
+function renderBackgroundImage() {
+	fetch(
+		`https://source.unsplash.com/${screen.width}x${screen.height}/?sky`
+	).then((response) => {
+		console.log(response);
+		document.body.style.backgroundImage = `url("${response.url}")`;
+	});
 }
