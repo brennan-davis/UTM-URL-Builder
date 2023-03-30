@@ -169,7 +169,7 @@ function GetById(name) {
 
 function renderBackgroundImage() {
 	fetch(
-		`https://source.unsplash.com/${screen.width}x${screen.height}/?sky`
+		`https://source.unsplash.com/${screen.width}x${screen.height}/?nature`
 	).then((response) => {
 		console.log(response);
 		document.body.style.backgroundImage = `url("${response.url}")`;
